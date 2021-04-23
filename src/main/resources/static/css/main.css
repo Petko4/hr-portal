@@ -1,0 +1,13 @@
+.homepage {
+    background-image: url("../img/homepage-background.jpg");
+    font-family: 'Assistant', sans-serif;
+    color:white
+}
+
+hr {
+    border-style: dotted none none;
+    border-color: #f4f9f9;
+    border-width: 5px;
+    width: 5%;
+}
+
