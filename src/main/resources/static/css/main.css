@@ -1,13 +1,38 @@
 .homepage {
     background-image: url("../img/homepage-background.jpg");
+    color:white;
     font-family: 'Assistant', sans-serif;
-    color:white
+    font-weight: bold;
+    line-height: 2;
+    text-align: center;
 }
 
-hr {
-    border-style: dotted none none;
-    border-color: #f4f9f9;
-    border-width: 5px;
-    width: 5%;
+.homepage > p {
+	margin: auto;
+	width: 40%;
+}
+
+.homepage-btn {
+   background: transparent;
+   border-radius: 0;
+   color: #FFFFFF;
+   cursor: pointer;
+   display: inline-block;
+   font-family: Open Sans;
+   font-size: 18px;
+   padding: 10px;
+   text-align: center;
+   text-decoration: none;
+   -moz-border-radius: 0;
+   -webkit-border-radius: 0;
+}
+
+.homepage-btn:hover {
+   background: #156f94;
+   border: solid #1B5F95 0;
+   border-radius: 90px;
+   text-decoration: none;
+   -moz-border-radius: 100px;
+   -webkit-border-radius: 100px;
 }
 
