@@ -5,12 +5,15 @@ import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * Class represent a job requirement entity
@@ -30,6 +33,7 @@ public class Requirement {
     
     @Column(name = "requirement_name")
     private String name;
+    @JsonIgnore
     @ManyToMany(mappedBy = "requirements")
     private Set<Job> jobs;
     

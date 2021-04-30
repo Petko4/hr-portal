@@ -6,12 +6,15 @@ import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.NamedAttributeNode;
+import javax.persistence.NamedEntityGraph;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 /**
@@ -19,6 +22,8 @@ import javax.persistence.Table;
  * @author Petko4
  *
  */
+
+@NamedEntityGraph(name="job-requirements-graph", attributeNodes = @NamedAttributeNode("requirements"))
 @Entity
 @Table(name = "jobs")
 public class Job {
@@ -35,7 +40,7 @@ public class Job {
     @Column(name = "job_description_preview")
     private String descriptionPreview;
     
-    @ManyToMany(cascade = {CascadeType.MERGE, CascadeType.REFRESH, CascadeType.PERSIST})
+    @ManyToMany(cascade = CascadeType.PERSIST)
     @JoinTable(
             name = "jobs_requirements",
             joinColumns = @JoinColumn(name = "job_id"),
